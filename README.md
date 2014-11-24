@@ -10,7 +10,7 @@ pod 'BDGViewController'
 
 ## Which problem is solved using this controller?
 
-**Layout & animations**
+**Layout & animations**<br/>
 These days with all the new screen sizes you really need to be able to set the frames of your subviews correctly. Of course, when you support rotation in your Apps you already needed to do this! You can get far with resizingMasks and perhaps with the new AutoLayout as well, but subsequently animating these subviews can be a pain!
 
 When you have use a standard viewcontroller, the frame of the view is not set in viewDidLoad. It is finally set though in viewWillLayoutSubviews, where you can then layout your subviews. But there is one big problem with this method! Any subview for which you set the frame in viewWillLayoutSubviews can not be animated! Because every time you perform an animation with [UIView animateWithDuration..., the viewWillLayoutSubviews method is called, resetting the frame and destroying any beautiful animation you had in mind. BUT how to set the frame then of a subview?
@@ -23,7 +23,7 @@ The problem with this solution is:
 
 ## This solution!
 
-This solution uses a beautiful simple UIViewController that feels like a UIView, but is still a viewcontroller! With this viewcontroller you can use the standard UIView methods such as 'addSubview' and 'layoutSubviews' and you can still animate any subview!
+This solution uses a beautiful simple UIViewController that feels like a UIView, but is still a viewcontroller! With this viewcontroller you can use the standard UIView methods such as 'addSubview' and 'layoutSubviews' and you can still animate any subview! And you remain a viewcontroller, so you still have all the advantages such as accesssing the navigationcontroller!
 Examples:
 
 You can add subviews like you're used to in a custom UIView:
