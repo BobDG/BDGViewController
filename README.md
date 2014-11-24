@@ -17,9 +17,9 @@ When your viewcontroller contains subviews you can set the subView-frames in 'vi
 ```
 the 'viewWillLayoutSubviews' method is called, resetting the frame and destroying any beautiful animation you had in mind. The same happens when you use the 'layoutSubviews' method of a custom UIView...
 
-There is as far as I know one solution that uses a custom UIView with a custom updateLayout method, but this solution has 3 problems:</br>
-1. You need to create this custom subview everytime with the same custom methods/frames, for every viewcontroller...</br>
-2. You are not within the viewcontroller anymore! Any buttons/taps/etc that actually wants the viewcontroller to perform an action, for example use the navigationController/navigationItem/properties/etc. is impossible. For that you need to create a protocol with a delegate (or ugly-code properties) which is even more work. </br>
+There is as far as I know one solution that uses a custom UIView with a custom updateLayout method, but this solution has 3 problems:<br/>
+1. You need to create this custom subview everytime with the same custom methods/frames, for every viewcontroller...<br/>
+2. You are not within the viewcontroller anymore! Any buttons/taps/etc that actually wants the viewcontroller to perform an action, for example use the navigationController/navigationItem/properties/etc. is impossible. For that you need to create a protocol with a delegate (or ugly-code properties) which is even more work.<br/>
 3. It's not beautiful code and you die a litle on the inside...
 
 ## The solution!
