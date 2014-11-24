@@ -14,9 +14,9 @@ pod 'BDGViewController'
 When your viewcontroller contains subviews you can set the frames in viewWillLayoutSubviews. But any subview for which you set the frame in viewWillLayoutSubviews can not be animated! Because every time you perform an animation with [UIView animateWithDuration..., the viewWillLayoutSubviews method is called, resetting the frame and destroying any beautiful animation you had in mind. The same happens when you use the layoutSubviews method of a custom UIView. 
 BUT how to set the frame then of a subview when you still want to animate it?
 
-There is one solution that uses a custom UIView with a custom updateLayout method, but this solution has 3 problems:
-1. You need to create this custom subview everytime, with the same custom methods/frames, for every viewcontroller...
-2. You are not within the viewcontroller anymore! Any buttons/taps/etc that actually wants the viewcontroller to perform an action, for example use the navigationcontroller is impossible. Then you need to create a protocol with a delegate, (or ugly-code properties) which is even more work. 
+There is one solution that uses a custom UIView with a custom updateLayout method, but this solution has 3 problems:</br>
+1. You need to create this custom subview everytime, with the same custom methods/frames, for every viewcontroller...</br>
+2. You are not within the viewcontroller anymore! Any buttons/taps/etc that actually wants the viewcontroller to perform an action, for example use the navigationcontroller is impossible. Then you need to create a protocol with a delegate, (or ugly-code properties) which is even more work. </br>
 3. It's not beautiful code!
 
 ## This solution!
@@ -37,7 +37,7 @@ You can layout subviews like you're used to in a custom UIView:
 }
 ```
 
-Because this solution supports animation, I've added some easy animation methods as well! You can scale, move and rotate with easy methods and it will automatically animate these! The following example is simple but you can also set animation durations and add completion blocks!
+Because this solution is about animating subviews there are easy animation methods as well. You can scale, move and rotate with easy methods and it will automatically animate. The following example is simple but you can also set animation durations and add completion blocks.
 ```
 [self moveView:subView1 toPoint:CGPointMake(newX, newY)];
 ```
