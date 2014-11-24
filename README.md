@@ -11,7 +11,10 @@ pod 'BDGViewController'
 ## Which problem is solved?
 
 **Layout & animations**<br/>
-When your viewcontroller contains subviews you can set the subView-frames in 'viewWillLayoutSubviews'. But any subview for which you set the frame in 'viewWillLayoutSubviews' can not be animated! Because every time you animate with [UIView animateWithDuration..., the 'viewWillLayoutSubviews' method is called, resetting the frame and destroying any beautiful animation you had in mind. The same happens when you use the 'layoutSubviews' method of a custom UIView...
+When your viewcontroller contains subviews you can set the subView-frames in 'viewWillLayoutSubviews'. But any subview for which you set the frame in 'viewWillLayoutSubviews' can not be animated! Because every time you animate with
+```[UIView animateWithDuration...];
+```
+the 'viewWillLayoutSubviews' method is called, resetting the frame and destroying any beautiful animation you had in mind. The same happens when you use the 'layoutSubviews' method of a custom UIView...
 
 There is as far as I know one solution that uses a custom UIView with a custom updateLayout method, but this solution has 3 problems:</br>
 1. You need to create this custom subview everytime with the same custom methods/frames, for every viewcontroller...</br>
