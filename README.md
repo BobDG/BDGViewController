@@ -3,7 +3,7 @@ BDGViewController
 
 The viewcontroller subclass that finally solves the main problem of viewcontrollers since the beginning of times!
 
-## Installation using Cocoapods
+## Installation using CocoaPods
 ```
 pod 'BDGViewController'
 ```
